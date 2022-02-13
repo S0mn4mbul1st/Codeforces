@@ -1,0 +1,29 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+string isEquilibrium(int n){
+    int sumA = 0, sumB = 0, sumC = 0;
+
+    for(int i=0; i<n; i++){
+        int x, y, z;
+
+        cin >> x >> y >> z;
+
+        sumA += x;
+        sumB += y;
+        sumC += z;
+    }
+    return (!sumA and !sumB and !sumC) ? "YES" : "NO";
+}
+
+int main()
+{
+    int n;
+
+    cin >> n;
+
+    cout << isEquilibrium(n) << endl;
+
+    return 0;
+}
