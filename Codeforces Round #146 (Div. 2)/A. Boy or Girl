@@ -2,30 +2,19 @@
 
 using namespace std;
 
-int countDistinct(string s)
-{
-    unordered_map<char, int> m;
-
-    for (int i = 0; i < s.length(); i++) {
-        m[s[i]]++;
-    }
-
-    return m.size();
-}
-
 string isBoi(string username){
 
-    int n = countDistinct(username);
+    unordered_map<char, int> m;
 
-    if (n == 1)
-        return "CHAT WITH HER!";
-
-    for (int i = 2; i <= sqrt(n); i++) {
-        if (n % i == 0)
-            return "CHAT WITH HER!";
+    for (int i = 0; i < username.length(); i++) {
+        m[username[i]]++;
     }
 
-    return "IGNORE HIM!";
+        if(m.size() % 2 != 0)
+            return "IGNORE HIM!";
+
+
+    return "CHAT WITH HER!";
 }
 
 int main()
