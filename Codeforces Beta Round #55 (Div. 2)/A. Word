@@ -1,0 +1,30 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+void solve(){
+    string word;
+
+    cin >> word;
+
+    unsigned int lower = 0, upper = 0;
+
+    for(int i = 0 ; i < word.length(); i ++)
+        (islower(word.at(i))) ? lower ++ : upper ++;
+
+    if(lower >= upper)
+    std::for_each(word.begin(), word.end(), [](char & c){
+    c = ::tolower(c);
+});
+    else std::for_each(word.begin(), word.end(), [](char & c){
+    c = ::toupper(c);
+});
+    cout << word << endl;
+}
+
+int main()
+{
+    solve();
+
+    return 0;
+}
