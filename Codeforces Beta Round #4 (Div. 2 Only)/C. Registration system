@@ -1,0 +1,37 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+map<string, int> database;
+
+void solve(){
+
+        string s;
+
+        cin >> s;
+
+        if (!database.count(s))
+        {
+            cout << "OK" << endl;
+            database[s] ++;
+        }
+        else
+        {
+            cout << s << database[s] << endl;
+            database[s] ++;
+        }
+}
+
+int main()
+{
+    int n;
+
+    cin >> n;
+
+    while(n--){
+
+        solve();
+    }
+
+    return 0;
+}
